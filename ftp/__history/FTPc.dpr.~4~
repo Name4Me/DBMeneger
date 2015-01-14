@@ -1,0 +1,13 @@
+program FTPc;
+
+uses
+  Forms,
+  uFTP in 'uFTP.pas' {FTPForm};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TFTPForm, FTPForm);
+  Application.Run;
+end.

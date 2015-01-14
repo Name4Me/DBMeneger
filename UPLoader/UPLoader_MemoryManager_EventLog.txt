@@ -1,0 +1,244 @@
+
+--------------------------------2009/10/19 1:05:49--------------------------------
+A memory block has been leaked. The size is: 12
+
+This block was allocated by thread 0x824, and the stack trace (return addresses) at the time was:
+40307E [System][System.@GetMem]
+403CB3 [System][System.TObject.NewInstance]
+40403A [System][System.@ClassCreate]
+4926DE [IdThreadSafe][IdThreadSafe.TIdThreadSafe.Create]
+4AEDA3 [IdThread][IdThread.IdThread]
+40486F [System][System.InitUnits]
+4048D7 [System][System.@StartExe]
+406DDF [SysInit][SysInit.@InitExe]
+4AEE04 [D:\MyProjects\DBMeneger\UPLoader\UPLoader.dpr][UPLoader][UPLoader.UPLoader][12]
+7C90DCBA [ZwSetInformationThread]
+7C817077 [Unknown function at RegisterWaitForInputIdle]
+
+The block is currently used for an object of class: TIdThreadSafeInteger
+
+The allocation number is: 242
+
+Current memory dump of 256 bytes starting at pointer address 7FF95420:
+4C 26 49 00 D0 41 FA 7F 00 00 00 00 8B 05 53 84 00 00 00 00 81 72 F9 7F 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 FD 00 00 00 7E 30 40 00 C1 4C 40 00 49 53 40 00 87 D5 40 00 5F 1E 46 00
+DC E7 4A 00 6F 48 40 00 D7 48 40 00 DF 6D 40 00 04 EE 4A 00 BA DC 90 7C 24 08 00 00 9A 30 40 00
+36 4C 40 00 98 10 40 00 F3 57 40 00 7B 88 46 00 07 48 40 00 9F 4A 40 00 47 EE 4A 00 BA DC 90 7C
+77 70 81 7C 00 00 00 00 24 08 00 00 0C 00 00 00 00 00 00 00 AA 17 4E FA 1C AE 4B 00 80 80 80 80
+80 80 80 80 55 E8 B1 05 00 00 00 00 39 54 F9 7F 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+04 01 00 00 7E 30 40 00 C1 4C 40 00 49 53 40 00 87 D5 40 00 5F 1E 46 00 DC E7 4A 00 6F 48 40 00
+D7 48 40 00 DF 6D 40 00 04 EE 4A 00 BA DC 90 7C 24 08 00 00 9A 30 40 00 36 4C 40 00 98 10 40 00
+L  &  I  .  –  A  ˙    .  .  .  .  ã  .  S  Ñ  .  .  .  .  Å  r  ˘    .  .  .  .  .  .  .  .
+.  .  .  .  .  .  .  .  ˝  .  .  .  ~  0  @  .  ¡  L  @  .  I  S  @  .  á  ’  @  .  _  .  F  .
+‹  Á  J  .  o  H  @  .  ◊  H  @  .  ﬂ  m  @  .  .  Ó  J  .  ∫  ‹  ê  |  $  .  .  .  ö  0  @  .
+6  L  @  .  ò  .  @  .  Û  W  @  .  {  à  F  .  .  H  @  .  ü  J  @  .  G  Ó  J  .  ∫  ‹  ê  |
+w  p  Å  |  .  .  .  .  $  .  .  .  .  .  .  .  .  .  .  .  ™  .  N  ˙  .  Æ  K  .  Ä  Ä  Ä  Ä
+Ä  Ä  Ä  Ä  U  Ë  ±  .  .  .  .  .  9  T  ˘    .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .
+.  .  .  .  ~  0  @  .  ¡  L  @  .  I  S  @  .  á  ’  @  .  _  .  F  .  ‹  Á  J  .  o  H  @  .
+◊  H  @  .  ﬂ  m  @  .  .  Ó  J  .  ∫  ‹  ê  |  $  .  .  .  ö  0  @  .  6  L  @  .  ò  .  @  .
+
+--------------------------------2009/10/19 1:05:49--------------------------------
+A memory block has been leaked. The size is: 36
+
+This block was allocated by thread 0x824, and the stack trace (return addresses) at the time was:
+40307E [System][System.@GetMem]
+403CB3 [System][System.TObject.NewInstance]
+40403A [System][System.@ClassCreate]
+7C917E09 [Unknown function at RtlCompareUnicodeString]
+42DCCE [SyncObjs][SyncObjs.TCriticalSection.Create]
+46AF2B [IdWship6][IdWship6.InitLibrary]
+4AE887 [IdStack][IdStack.IdStack]
+40486F [System][System.InitUnits]
+4048D7 [System][System.@StartExe]
+406DDF [SysInit][SysInit.@InitExe]
+4AEE04 [D:\MyProjects\DBMeneger\UPLoader\UPLoader.dpr][UPLoader][UPLoader.UPLoader][12]
+
+The block is currently used for an object of class: TIdCriticalSection
+
+The allocation number is: 227
+
+Current memory dump of 256 bytes starting at pointer address 7FFA3DB0:
+FC 2C 46 00 00 75 15 00 FF FF FF FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 11 A8 78 FD
+80 80 80 80 80 80 80 80 00 00 00 00 91 3E FA 7F 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+E8 00 00 00 7E 30 40 00 C1 4C 40 00 EC 4C 40 00 5E 6C 40 00 60 04 91 7C E7 42 91 7C AF 42 91 7C
+AC 5F 91 7C 71 B8 94 7C 7D 92 91 7C 0F 93 91 7C 24 08 00 00 9A 30 40 00 36 4C 40 00 98 10 40 00
+F3 57 40 00 C6 E8 48 00 07 48 40 00 9F 4A 40 00 47 EE 4A 00 BA DC 90 7C 77 70 81 7C 00 00 00 00
+24 08 00 00 16 00 00 00 00 00 00 00 8D E9 1F E4 1C AE 4B 00 80 80 80 80 80 80 80 80 80 80 80 80
+80 80 80 80 80 80 72 16 E0 1B 80 80 80 80 80 80 80 80 80 80 80 80 80 80 00 00 00 00 41 3F FA 7F
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 E9 00 00 00 7E 30 40 00 C1 4C 40 00 EC 4C 40 00
+¸  ,  F  .  .  u  .  .  ˇ  ˇ  ˇ  ˇ  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  ®  x  ˝
+Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  .  .  .  .  ë  >  ˙    .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .
+Ë  .  .  .  ~  0  @  .  ¡  L  @  .  Ï  L  @  .  ^  l  @  .  `  .  ë  |  Á  B  ë  |  Ø  B  ë  |
+¨  _  ë  |  q  ∏  î  |  }  í  ë  |  .  ì  ë  |  $  .  .  .  ö  0  @  .  6  L  @  .  ò  .  @  .
+Û  W  @  .  ∆  Ë  H  .  .  H  @  .  ü  J  @  .  G  Ó  J  .  ∫  ‹  ê  |  w  p  Å  |  .  .  .  .
+$  .  .  .  .  .  .  .  .  .  .  .  ç  È  .  ‰  .  Æ  K  .  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä
+Ä  Ä  Ä  Ä  Ä  Ä  r  .  ‡  .  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  .  .  .  .  A  ?  ˙  
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  È  .  .  .  ~  0  @  .  ¡  L  @  .  Ï  L  @  .
+
+--------------------------------2009/10/19 1:05:49--------------------------------
+A memory block has been leaked. The size is: 36
+
+This block was allocated by thread 0x824, and the stack trace (return addresses) at the time was:
+40307E [System][System.@GetMem]
+403CB3 [System][System.TObject.NewInstance]
+40403A [System][System.@ClassCreate]
+42DCCE [SyncObjs][SyncObjs.TCriticalSection.Create]
+403CBC [System][System.TObject.NewInstance]
+40403A [System][System.@ClassCreate]
+4926F7 [IdThreadSafe][IdThreadSafe.TIdThreadSafe.Create]
+4AEDA3 [IdThread][IdThread.IdThread]
+40486F [System][System.InitUnits]
+4048D7 [System][System.@StartExe]
+406DDF [SysInit][SysInit.@InitExe]
+
+The block is currently used for an object of class: TIdCriticalSection
+
+The allocation number is: 243
+
+Current memory dump of 256 bytes starting at pointer address 7FFA41D0:
+FC 2C 46 00 38 75 15 00 FF FF FF FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 35 0B 23 7A
+80 80 80 80 80 80 80 80 00 00 00 00 21 3B FA 7F 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+F7 00 00 00 7E 30 40 00 C1 4C 40 00 49 53 40 00 87 D5 40 00 5F 1E 46 00 DC E7 4A 00 6F 48 40 00
+D7 48 40 00 DF 6D 40 00 04 EE 4A 00 BA DC 90 7C 24 08 00 00 9A 30 40 00 36 4C 40 00 98 10 40 00
+F3 57 40 00 7B 88 46 00 07 48 40 00 9F 4A 40 00 47 EE 4A 00 BA DC 90 7C 77 70 81 7C 00 00 00 00
+24 08 00 00 18 00 00 00 00 00 00 00 78 05 4F FA 1C AE 4B 00 80 80 80 80 80 80 80 80 80 80 80 80
+80 80 80 80 80 80 80 80 87 FA B0 05 80 80 80 80 80 80 80 80 80 80 80 80 00 00 00 00 01 42 FA 7F
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 F9 00 00 00 7E 30 40 00 C1 4C 40 00 49 53 40 00
+¸  ,  F  .  8  u  .  .  ˇ  ˇ  ˇ  ˇ  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  5  .  #  z
+Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  .  .  .  .  !  ;  ˙    .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .
+˜  .  .  .  ~  0  @  .  ¡  L  @  .  I  S  @  .  á  ’  @  .  _  .  F  .  ‹  Á  J  .  o  H  @  .
+◊  H  @  .  ﬂ  m  @  .  .  Ó  J  .  ∫  ‹  ê  |  $  .  .  .  ö  0  @  .  6  L  @  .  ò  .  @  .
+Û  W  @  .  {  à  F  .  .  H  @  .  ü  J  @  .  G  Ó  J  .  ∫  ‹  ê  |  w  p  Å  |  .  .  .  .
+$  .  .  .  .  .  .  .  .  .  .  .  x  .  O  ˙  .  Æ  K  .  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä
+Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  á  ˙  ∞  .  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  .  .  .  .  .  B  ˙  
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  ˘  .  .  .  ~  0  @  .  ¡  L  @  .  I  S  @  .
+
+--------------------------------2009/10/19 1:05:49--------------------------------
+This application has leaked memory. The small block leaks are (excluding expected leaks registered by pointer):
+
+5 - 12 bytes: TIdThreadSafeInteger x 1
+21 - 36 bytes: TIdCriticalSection x 2
+
+Note: Memory leak detail is logged to a text file in the same folder as this application. To disable this memory leak check, undefine "EnableMemoryLeakReporting".
+
+--------------------------------2009/10/19 1:14:19--------------------------------
+A memory block has been leaked. The size is: 12
+
+This block was allocated by thread 0x6C0, and the stack trace (return addresses) at the time was:
+40307E [System][System.@GetMem]
+403CB3 [System][System.TObject.NewInstance]
+40403A [System][System.@ClassCreate]
+46F8E2 [IdThreadSafe][IdThreadSafe.TIdThreadSafe.Create]
+4AE857 [IdThread][IdThread.IdThread]
+40486F [System][System.InitUnits]
+4048D7 [System][System.@StartExe]
+406DDF [SysInit][SysInit.@InitExe]
+4AEE04 [D:\MyProjects\DBMeneger\UPLoader\UPLoader.dpr][UPLoader][UPLoader.UPLoader][12]
+7C90DCBA [ZwSetInformationThread]
+7C817077 [Unknown function at RegisterWaitForInputIdle]
+
+The block is currently used for an object of class: TIdThreadSafeInteger
+
+The allocation number is: 242
+
+Current memory dump of 256 bytes starting at pointer address 7FF95420:
+50 F8 46 00 D0 41 FA 7F 00 00 00 00 37 3A 55 84 00 00 00 00 81 72 F9 7F 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 FD 00 00 00 7E 30 40 00 C1 4C 40 00 49 53 40 00 87 D5 40 00 5F 1E 46 00
+C0 E8 4A 00 6F 48 40 00 D7 48 40 00 DF 6D 40 00 04 EE 4A 00 BA DC 90 7C C0 06 00 00 9A 30 40 00
+36 4C 40 00 98 10 40 00 F3 57 40 00 37 BF 47 00 07 48 40 00 9F 4A 40 00 47 EE 4A 00 BA DC 90 7C
+77 70 81 7C 00 00 00 00 C0 06 00 00 0C 00 00 00 00 00 00 00 82 4C 4F FA 1C AE 4B 00 80 80 80 80
+80 80 80 80 7D B3 B0 05 00 00 00 00 39 54 F9 7F 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+04 01 00 00 7E 30 40 00 C1 4C 40 00 49 53 40 00 87 D5 40 00 5F 1E 46 00 C0 E8 4A 00 6F 48 40 00
+D7 48 40 00 DF 6D 40 00 04 EE 4A 00 BA DC 90 7C C0 06 00 00 9A 30 40 00 36 4C 40 00 98 10 40 00
+P  ¯  F  .  –  A  ˙    .  .  .  .  7  :  U  Ñ  .  .  .  .  Å  r  ˘    .  .  .  .  .  .  .  .
+.  .  .  .  .  .  .  .  ˝  .  .  .  ~  0  @  .  ¡  L  @  .  I  S  @  .  á  ’  @  .  _  .  F  .
+¿  Ë  J  .  o  H  @  .  ◊  H  @  .  ﬂ  m  @  .  .  Ó  J  .  ∫  ‹  ê  |  ¿  .  .  .  ö  0  @  .
+6  L  @  .  ò  .  @  .  Û  W  @  .  7  ø  G  .  .  H  @  .  ü  J  @  .  G  Ó  J  .  ∫  ‹  ê  |
+w  p  Å  |  .  .  .  .  ¿  .  .  .  .  .  .  .  .  .  .  .  Ç  L  O  ˙  .  Æ  K  .  Ä  Ä  Ä  Ä
+Ä  Ä  Ä  Ä  }  ≥  ∞  .  .  .  .  .  9  T  ˘    .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .
+.  .  .  .  ~  0  @  .  ¡  L  @  .  I  S  @  .  á  ’  @  .  _  .  F  .  ¿  Ë  J  .  o  H  @  .
+◊  H  @  .  ﬂ  m  @  .  .  Ó  J  .  ∫  ‹  ê  |  ¿  .  .  .  ö  0  @  .  6  L  @  .  ò  .  @  .
+
+--------------------------------2009/10/19 1:14:19--------------------------------
+A memory block has been leaked. The size is: 36
+
+This block was allocated by thread 0x6C0, and the stack trace (return addresses) at the time was:
+40307E [System][System.@GetMem]
+403CB3 [System][System.TObject.NewInstance]
+40403A [System][System.@ClassCreate]
+7C917E09 [Unknown function at RtlCompareUnicodeString]
+42DCCE [SyncObjs][SyncObjs.TCriticalSection.Create]
+466C2B [IdWship6][IdWship6.InitLibrary]
+4AE813 [IdStack][IdStack.IdStack]
+40486F [System][System.InitUnits]
+4048D7 [System][System.@StartExe]
+406DDF [SysInit][SysInit.@InitExe]
+4AEE04 [D:\MyProjects\DBMeneger\UPLoader\UPLoader.dpr][UPLoader][UPLoader.UPLoader][12]
+
+The block is currently used for an object of class: TIdCriticalSection
+
+The allocation number is: 227
+
+Current memory dump of 256 bytes starting at pointer address 7FFA3DB0:
+FC 2C 46 00 00 75 15 00 FF FF FF FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 4D EE 78 FD
+80 80 80 80 80 80 80 80 00 00 00 00 91 3E FA 7F 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+E8 00 00 00 7E 30 40 00 C1 4C 40 00 EC 4C 40 00 5E 6C 40 00 60 04 91 7C E7 42 91 7C AF 42 91 7C
+AC 5F 91 7C 71 B8 94 7C 7D 92 91 7C 0F 93 91 7C C0 06 00 00 9A 30 40 00 36 4C 40 00 98 10 40 00
+F3 57 40 00 B2 B9 46 00 07 48 40 00 9F 4A 40 00 47 EE 4A 00 BA DC 90 7C 77 70 81 7C 00 00 00 00
+C0 06 00 00 16 00 00 00 00 00 00 00 B1 B7 1D E4 1C AE 4B 00 80 80 80 80 80 80 80 80 80 80 80 80
+80 80 80 80 80 80 4E 48 E2 1B 80 80 80 80 80 80 80 80 80 80 80 80 80 80 00 00 00 00 41 3F FA 7F
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 E9 00 00 00 7E 30 40 00 C1 4C 40 00 EC 4C 40 00
+¸  ,  F  .  .  u  .  .  ˇ  ˇ  ˇ  ˇ  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  M  Ó  x  ˝
+Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  .  .  .  .  ë  >  ˙    .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .
+Ë  .  .  .  ~  0  @  .  ¡  L  @  .  Ï  L  @  .  ^  l  @  .  `  .  ë  |  Á  B  ë  |  Ø  B  ë  |
+¨  _  ë  |  q  ∏  î  |  }  í  ë  |  .  ì  ë  |  ¿  .  .  .  ö  0  @  .  6  L  @  .  ò  .  @  .
+Û  W  @  .  ≤  π  F  .  .  H  @  .  ü  J  @  .  G  Ó  J  .  ∫  ‹  ê  |  w  p  Å  |  .  .  .  .
+¿  .  .  .  .  .  .  .  .  .  .  .  ±  ∑  .  ‰  .  Æ  K  .  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä
+Ä  Ä  Ä  Ä  Ä  Ä  N  H  ‚  .  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  .  .  .  .  A  ?  ˙  
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  È  .  .  .  ~  0  @  .  ¡  L  @  .  Ï  L  @  .
+
+--------------------------------2009/10/19 1:14:19--------------------------------
+A memory block has been leaked. The size is: 36
+
+This block was allocated by thread 0x6C0, and the stack trace (return addresses) at the time was:
+40307E [System][System.@GetMem]
+403CB3 [System][System.TObject.NewInstance]
+40403A [System][System.@ClassCreate]
+42DCCE [SyncObjs][SyncObjs.TCriticalSection.Create]
+403CBC [System][System.TObject.NewInstance]
+40403A [System][System.@ClassCreate]
+46F8FB [IdThreadSafe][IdThreadSafe.TIdThreadSafe.Create]
+4AE857 [IdThread][IdThread.IdThread]
+40486F [System][System.InitUnits]
+4048D7 [System][System.@StartExe]
+406DDF [SysInit][SysInit.@InitExe]
+
+The block is currently used for an object of class: TIdCriticalSection
+
+The allocation number is: 243
+
+Current memory dump of 256 bytes starting at pointer address 7FFA41D0:
+FC 2C 46 00 38 75 15 00 FF FF FF FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 45 41 25 7A
+80 80 80 80 80 80 80 80 00 00 00 00 21 3B FA 7F 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+F7 00 00 00 7E 30 40 00 C1 4C 40 00 49 53 40 00 87 D5 40 00 5F 1E 46 00 C0 E8 4A 00 6F 48 40 00
+D7 48 40 00 DF 6D 40 00 04 EE 4A 00 BA DC 90 7C C0 06 00 00 9A 30 40 00 36 4C 40 00 98 10 40 00
+F3 57 40 00 37 BF 47 00 07 48 40 00 9F 4A 40 00 47 EE 4A 00 BA DC 90 7C 77 70 81 7C 00 00 00 00
+C0 06 00 00 18 00 00 00 00 00 00 00 50 3A 50 FA 1C AE 4B 00 80 80 80 80 80 80 80 80 80 80 80 80
+80 80 80 80 80 80 80 80 AF C5 AF 05 80 80 80 80 80 80 80 80 80 80 80 80 00 00 00 00 01 42 FA 7F
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 F9 00 00 00 7E 30 40 00 C1 4C 40 00 49 53 40 00
+¸  ,  F  .  8  u  .  .  ˇ  ˇ  ˇ  ˇ  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  E  A  %  z
+Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  .  .  .  .  !  ;  ˙    .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .
+˜  .  .  .  ~  0  @  .  ¡  L  @  .  I  S  @  .  á  ’  @  .  _  .  F  .  ¿  Ë  J  .  o  H  @  .
+◊  H  @  .  ﬂ  m  @  .  .  Ó  J  .  ∫  ‹  ê  |  ¿  .  .  .  ö  0  @  .  6  L  @  .  ò  .  @  .
+Û  W  @  .  7  ø  G  .  .  H  @  .  ü  J  @  .  G  Ó  J  .  ∫  ‹  ê  |  w  p  Å  |  .  .  .  .
+¿  .  .  .  .  .  .  .  .  .  .  .  P  :  P  ˙  .  Æ  K  .  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä
+Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ø  ≈  Ø  .  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  Ä  .  .  .  .  .  B  ˙  
+.  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  ˘  .  .  .  ~  0  @  .  ¡  L  @  .  I  S  @  .
+
+--------------------------------2009/10/19 1:14:19--------------------------------
+This application has leaked memory. The small block leaks are (excluding expected leaks registered by pointer):
+
+5 - 12 bytes: TIdThreadSafeInteger x 1
+21 - 36 bytes: TIdCriticalSection x 2
+
+Note: Memory leak detail is logged to a text file in the same folder as this application. To disable this memory leak check, undefine "EnableMemoryLeakReporting".

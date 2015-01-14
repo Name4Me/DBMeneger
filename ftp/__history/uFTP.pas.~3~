@@ -1,0 +1,241 @@
+{ $HDR$}
+
+unit uFTP;
+
+interface
+
+uses
+  Windows, Forms, Graphics, IdIOHandler, IdIOHandlerSocket, IdIOHandlerStack,
+  IdIntercept, IdAntiFreezeBase, IdAntiFreeze,
+  IdBaseComponent, IdComponent, IdTCPConnection, IdFTP, ComCtrls, StdCtrls,
+  Controls, ExtCtrls,
+  Classes, IdTCPClient, IdExplicitTLSClientServerBase;
+type
+  TMainForm = class(TForm)
+    DirectoryListBox: TListBox;
+    IdFTP1: TIdFTP;
+    StatusBar1: TStatusBar;
+    IdAntiFreeze1: TIdAntiFreeze;
+    ProgressBar1: TProgressBar;
+    ConnectButton: TButton;
+    DownloadButton: TButton;
+    UploadButton: TButton;
+    HC1: THeaderControl;
+    Panel1: TPanel;
+    procedure ConnectButtonClick(Sender: TObject);
+    procedure UploadButtonClick(Sender: TObject);
+    procedure IdFTP1Disconnected(Sender: TObject);
+    procedure IdFTP1Status(axSender: TObject; const axStatus: TIdStatus;
+      const asStatusText: String);
+    procedure IdFTP1Work(Sender: TObject; AWorkMode: TWorkMode;
+      const AWorkCount: Integer);
+    procedure IdFTP1WorkBegin(Sender: TObject; AWorkMode: TWorkMode;
+      const AWorkCountMax: Integer);
+    procedure IdFTP1WorkEnd(Sender: TObject; AWorkMode: TWorkMode);
+    procedure IdLogEvent1Received(ASender: TComponent; const AText,
+      AData: String);
+    procedure IdLogEvent1Sent(ASender: TComponent; const AText,
+      AData: String);
+    procedure DebugListBoxDrawItem(Control: TWinControl; Index: Integer;
+      Rect: TRect; State: TOwnerDrawState);
+    procedure DirectoryListBoxDrawItem(Control: TWinControl;
+      Index: Integer; Rect: TRect; State: TOwnerDrawState);
+    procedure HC1SectionResize(HeaderControl: THeaderControl;
+      Section: THeaderSection);
+    procedure FormCreate(Sender: TObject);
+    procedure DownloadButtonClick(Sender: TObject);
+  private
+    { Private declarations }
+    AbortTransfer: Boolean;
+    TransferrignData: Boolean;
+    BytesToTransfer: LongWord;
+    procedure ChageDir(DirName: string);
+    procedure PutToDebugLog(Operation, S1: string);
+  public
+    { Public declarations }
+  end;
+
+var
+  MainForm: TMainForm;
+  CD:string ='/';
+  AverageSpeed: Double=0;
+implementation
+
+{$R *.dfm}
+
+procedure TMainForm.ConnectButtonClick(Sender: TObject);
+begin
+  ConnectButton.Enabled:=false;
+  if IdFTP1.Connected then try
+    if TransferrignData then IdFTP1.Abort;
+    IdFTP1.Quit;
+    finally
+    DirectoryListBox.Items.Clear;
+    ConnectButton.Caption:='Connect';
+    ConnectButton.Enabled:=true;
+    ConnectButton.Default:=true;
+    end else with IdFTP1 do try
+    Username:='sd@sline.com.ua';
+    Password:='h!:apjBjsm;6';
+    Connect;
+    finally
+    ConnectButton.Enabled:=true;
+    if Connected then begin
+      ConnectButton.Caption:='Disconnect';
+      ConnectButton.Default:=false;
+      //ChageDir(CD);
+      end;
+    except;
+    end;
+end;
+
+procedure TMainForm.UploadButtonClick(Sender: TObject);
+begin
+ if IdFTP1.Connected then begin
+    try
+      IdFTP1.TransferType:=ftBinary;
+      IdFTP1.Put('c:\temp\sklad.rar', 'sklad.rar');
+      ChageDir(idftp1.RetrieveCurrentDir);
+    finally
+    end;
+    end;
+end;
+
+procedure TMainForm.ChageDir(DirName: string);
+var
+ LS: TStringList;
+begin
+ LS:=TStringList.Create;
+ cd:=DirName;
+ try
+  IdFTP1.ChangeDir(DirName);
+  IdFTP1.TransferType:=ftASCII;
+  DirectoryListBox.Items.Clear;
+  IdFTP1.List(LS);
+  IdFTP1.DirectoryListing.Delete(0);
+  if (cd='/') then IdFTP1.DirectoryListing.Delete(0);
+  DirectoryListBox.Items.Text:=LS.Text;
+  if DirectoryListBox.Items.Count>0
+  then
+   if AnsiPos('total', DirectoryListBox.Items[0])>0
+   then DirectoryListBox.Items.Delete(0);
+ finally
+  LS.Free;
+ end;
+end;
+
+procedure TMainForm.IdFTP1Disconnected(Sender: TObject);
+begin
+ StatusBar1.Panels[0].Text:='Disconnected.';
+end;
+
+procedure TMainForm.IdFTP1Status(axSender: TObject; const axStatus: TIdStatus;
+  const asStatusText: string);
+begin
+ StatusBar1.Panels[0].Text:=asStatusText;
+end;
+
+procedure TMainForm.IdFTP1Work(Sender: TObject; AWorkMode: TWorkMode;
+  const AWorkCount: Integer);
+begin
+
+ if AbortTransfer then IdFTP1.Abort;
+ ProgressBar1.Position:=AWorkCount;
+ AbortTransfer:=false;
+end;
+
+procedure TMainForm.IdFTP1WorkBegin(Sender: TObject; AWorkMode: TWorkMode;
+  const AWorkCountMax: Integer);
+begin
+ TransferrignData:=true;
+ AbortTransfer:=false;
+ STime:=Now;
+ if AWorkCountMax>0 then ProgressBar1.Max:=AWorkCountMax
+  else ProgressBar1.Max:=BytesToTransfer;
+ AverageSpeed:=0;
+end;
+
+procedure TMainForm.IdFTP1WorkEnd(Sender: TObject; AWorkMode: TWorkMode);
+begin
+ StatusBar1.Panels[0].Text:='Transfer complete.';
+ BytesToTransfer:=0;
+ TransferrignData:=false;
+ ProgressBar1.Position:=0;
+ AverageSpeed:=0;
+end;
+
+procedure TMainForm.DirectoryListBoxDrawItem(Control: TWinControl;
+  Index: Integer; Rect: TRect; State: TOwnerDrawState);
+var
+ R: TRect;
+begin
+
+   if odSelected in State
+    then
+     begin
+      DirectoryListBox.Canvas.Brush.Color:=$00895F0A;
+      DirectoryListBox.Canvas.Font.Color:=clWhite;
+     end
+    else DirectoryListBox.Canvas.Brush.Color:=clWindow;
+    //
+    if Assigned(IdFTP1.DirectoryListing) and (IdFTP1.DirectoryListing.Count>Index)
+    then
+     begin
+      DirectoryListBox.Canvas.FillRect(Rect);
+      with IdFTP1.DirectoryListing.Items[Index] do
+       begin
+
+        DirectoryListBox.Canvas.TextOut(Rect.Left, Rect.Top, FileName);
+        R:=Rect;
+
+        R.Left:=Rect.Left+HC1.Sections.Items[0].Width;
+        R.Right:=R.Left+HC1.Sections.Items[1].Width;
+        DirectoryListBox.Canvas.FillRect(R);
+        DirectoryListBox.Canvas.TextOut(R.Left, Rect.Top, IntToStr(Size));
+   
+        R.Left:=R.Right;
+        R.Right:=R.Left+HC1.Sections.Items[2].Width;
+        DirectoryListBox.Canvas.FillRect(R);
+
+        if ItemType=ditDirectory
+        then DirectoryListBox.Canvas.TextOut(R.Left, Rect.Top, 'D')
+        else DirectoryListBox.Canvas.TextOut(R.Left, Rect.Top, 'F');
+   
+        R.Left:=R.Right;
+        R.Right:=R.Left+HC1.Sections.Items[3].Width;
+        DirectoryListBox.Canvas.FillRect(R);
+        DirectoryListBox.Canvas.TextOut(R.Left, Rect.Top, FormatDateTime('mm.dd.yyyy hh:mm', ModifiedDate));
+
+        R.Left:=R.Right;
+        R.Right:=R.Left+HC1.Sections.Items[4].Width;
+        DirectoryListBox.Canvas.FillRect(R);
+        DirectoryListBox.Canvas.TextOut(R.Left, Rect.Top, PermissionDisplay);
+   
+
+       end;
+     end;
+
+end;
+
+procedure TMainForm.DownloadButtonClick(Sender: TObject);
+begin
+ if not IdFTP1.Connected then Exit;
+ IdFTP1.TransferType:=ftBinary;
+ BytesToTransfer:=IdFTP1.Size('sklad.rar');
+ IdFTP1.Get('sklad.rar', 'c:\temp\sklad.rar', true);
+end;
+
+procedure TMainForm.FormCreate(Sender: TObject);
+begin
+  With HC1.Sections[HC1.Sections.Count-1] do Width:=HC1.Width-left;
+  PostMessage(ProgressBar1.Handle, $0409, 0, clGreen);
+  AutoSize:=True;
+end;
+
+procedure TMainForm.HC1SectionResize(HeaderControl: THeaderControl; Section: THeaderSection);
+begin
+  With HC1.Sections[HC1.Sections.Count-1] do Width:=HC1.Width-left;
+  DirectoryListBox.Repaint;
+end;
+
+end.

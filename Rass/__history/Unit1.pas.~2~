@@ -1,0 +1,309 @@
+unit Unit1;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  StdCtrls, RasUnit, ExtCtrls;
+
+type
+
+{
+    TRasConn = record
+      Size: DWORD;
+      Handle: THandle;
+      Name: array[0..20] of AnsiChar;
+    end;
+  
+    TRasEnumConnections = function(var RasConn: TRasConn; var Size: DWORD;
+      var Connections: DWORD): DWORD stdcall;
+    TRasHangUp = function(Handle: THandle): DWORD stdcall;
+}
+
+  TForm1 = class(TForm)
+    ListBox1: TListBox;
+    Button1: TButton;
+    Label1: TLabel;
+    Button2: TButton;
+    Button3: TButton;
+    Button4: TButton;
+    Button5: TButton;
+    Memo1: TMemo;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure Button4Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
+  private
+    { Private declarations }
+
+  public
+    { Public declarations }
+  end;
+TMyDialParam = Record
+  AMsg:Integer;
+  AState:TRasConnState;
+  AError:Integer;
+  End;
+var
+  Form1: TForm1;
+  MyDialParam:TMyDialParam;
+  hRas: ThRASConn;
+implementation
+Uses uDialUP;
+{$R *.DFM}
+
+function DisconnectDialUp: Boolean;
+var
+  Lib: HINST;
+  //RasEnumConnections: TRasEnumConnections;
+  //RasHangUp: TRasHangUp;
+  RasConn: TRasConn;
+  Code, Size, Connections: DWORD;
+begin
+  Result := True;
+{
+    try
+      Lib := LoadLibrary('rasapi32.dll');
+      try
+        if Lib = 0 then
+          Abort;
+        RasEnumConnections := GetProcAddress(Lib, 'RasEnumConnectionsA');
+        if not Assigned(@RasEnumConnections) then
+          Abort;
+        RasHangUp := GetProcAddress(Lib, 'RasHangUpA');
+        if not Assigned(@RasHangUp) then
+          Abort;
+        FillChar(RasConn, SizeOf(RasConn), 0);
+        RasConn.Size := SizeOf(RasConn);
+        Code := RasEnumConnections(RasConn, Size, Connections);
+        if (Connections <> 1) or (Code <> 0) then
+          Abort;
+        if RasHangUp(RasConn.Handle) <> 0 then
+          Abort;
+        //Sleep(3000);
+      finally
+        FreeLibrary(Lib);
+      end;
+    except
+      on E: EAbort do
+        Result := False;
+    else
+      raise;
+    end;
+}
+end;
+
+Function GetStatusString(State: TRasConnState; Error: Integer): String;
+Var
+C      : Array[0..100] of Char;
+S      : String;
+Begin
+If Error<>0 then
+Begin
+    RasGetErrorString(Error, C, 100);
+    Result:=C;
+End
+Else
+Begin
+    S:='';
+    Case State Of
+      RASCS_OpenPort:
+        S:='Opening port';
+      RASCS_PortOpened:
+        S:='Port opened';
+      RASCS_ConnectDevice:
+        S:='Connecting device';
+      RASCS_DeviceConnected:
+        S:='Device connected';
+      RASCS_AllDevicesConnected:
+        S:='All devices connected';
+      RASCS_Authenticate:
+        S:='Start authenticating';
+      RASCS_AuthNotify:
+        S:='Authentication: notify';
+      RASCS_AuthRetry:
+        S:='Authentication: retry';
+      RASCS_AuthCallback:
+        S:='Authentication: callback';
+      RASCS_AuthChangePassword:
+        S:='Authentication: change password';
+      RASCS_AuthProject:
+        S:='Authentication: projecting';
+      RASCS_AuthLinkSpeed:
+        S:='Authentication: link speed';
+      RASCS_AuthAck:
+        S:='Authentication: acknowledge';
+      RASCS_ReAuthenticate:
+        S:='Authentication: reauthenticate';
+      RASCS_Authenticated:
+        S:='Authenticated';
+      RASCS_PrepareForCallback:
+        S:='Preparing for callback';
+      RASCS_WaitForModemReset:
+        S:='Waiting for modem reset';
+      RASCS_WaitForCallback:
+        S:='Waiting for callback';
+      RASCS_Projected:
+        S:='Projected';
+      RASCS_StartAuthentication:
+        S:='Start authentication';
+      RASCS_CallbackComplete:
+        S:='Callback complete';
+      RASCS_LogonNetwork:
+        S:='Logging on network';
+
+      RASCS_Interactive:
+        S:='Interactive';
+      RASCS_RetryAuthentication:
+        S:='Retry Authentication';
+      RASCS_CallbackSetByCaller:
+        S:='Callback set by caller';
+      RASCS_PasswordExpired:
+        S:='Password expired';
+
+      RASCS_Connected:
+        S:='Connected';
+      RASCS_Disconnected:
+        S:='Disconnected';
+End;
+Result:=S;
+End;
+End;
+
+Procedure RasCallback(msg: Integer; state: TRasConnState;
+  error: Integer); stdcall;
+Begin
+MyDialParam.AMsg:=msg;
+MyDialParam.AState:=state;
+MyDialParam.AError:=error;
+Form1.Label1.Caption:=GetStatusString(MyDialParam.AState,MyDialParam.AError);
+Form1.Label1.Update;
+End;
+
+procedure TForm1.Button1Click(Sender: TObject);
+var
+  BuffSize,BufSize1,NumEntries,r          : Integer;
+  Entries           : Integer;
+  Entry             : Array[1..MaxEntries] of TRasEntryName;
+  X,Result_         : Integer;
+  AllEntries        : TStrings;
+  Entri : Array[1..MaxEntries] of LPRasConn;
+begin
+  AllEntries:=TStringList.Create;
+  ListBox1.Clear;
+  Entry[1].dwSize:=SizeOf(TRasEntryName);
+  BuffSize:=SizeOf(TRasEntryName)*MaxEntries;
+  Result_:=RasEnumEntries(nil, nil, @Entry[1], BuffSize, Entries);
+  If (Result_=0) and (Entries>0) then
+    For X:=1 To Entries Do Begin
+      ListBox1.Items.Add(Entry[x].szEntryName);
+      AllEntries.Add(Entry[x].szEntryName);
+      
+      r:=RasEnumConnections(@Entry[x], BufSize1, NumEntries);
+      ShowMessage(inttostr(r)+'//'+inttostr(NumEntries));
+      End;
+  AllEntries.Free;
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+var
+  Fp                  : LongBool;
+  R                   : Integer;
+  C                   : Array[0..100] of Char;
+  DialParams          : TRasDialParams;
+  AEntryDial          : String;
+  Errr: Integer;
+begin
+  If ListBox1.ItemIndex<0 Then Exit;
+  //RasHangUp(hRas);
+  AEntryDial:=ListBox1.Items.Strings[ListBox1.ItemIndex];
+  FillChar(DialParams, SizeOf(TRasDialParams), 0);
+  With DialParams Do
+  Begin
+   dwSize:=Sizeof(TRasDialParams);
+   StrPCopy(szEntryName, AEntryDial);
+   End;
+  R:=RasGetEntryDialParams(Nil, DialParams, Fp);
+
+  showmessage( GetStatusString(r,Errr));
+  If R=0 Then Begin
+    Application.ProcessMessages;
+    R:=RasDial(Nil, Nil, DialParams, 0, @RasCallback, hRAS);
+    If R<>0 Then Begin
+      RasGetErrorString(R,C,100);
+      MessageBox(0,C,'Œ¯Ë·Í‡!',MB_OK);
+      Exit;
+      End;
+    End;
+End;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+  FillChar(MyDialParam,SizeOf(MyDialParam),0);
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);
+begin
+  If RasHangUp(hRas)=0 Then
+   Label1.Caption:='Disconnected...';
+end;
+
+procedure TForm1.Button4Click(Sender: TObject);
+begin
+  //ShowMessage(IntToStr(ConnCount));
+  Dial;
+end;
+
+procedure TForm1.Button5Click(Sender: TObject);
+{
+  type
+   PRasConn=^TRasConn;
+   TRasConn=packed record
+    dwSize:DWord;
+    hRasConn:THandle;
+    szEntryName:array [0..23] of Char;
+   end;
+   TRasConnStatus=packed record
+    dwSize:DWord;
+    RasConnState:DWord;
+    dwError:DWord;
+    szDeviceType:array [0..16] of Char;
+    szDeviceName:array [0..128] of Char;
+    szPhoneNumber:array [0..129] of Char;
+   end;
+   TRasHangUp=function(hRasConn:THandle):DWord; stdcall;
+   TRasEnumConnections=function(RasConn:PRasConn; var bSize:DWord;
+                                var ConnCount:DWord):DWord; stdcall;
+   TRasGetConnectStatus=function(hRasConn:THandle; var lpRasConnStatus:TRasConnStatus):DWord; stdcall;
+}
+var RasApi:Cardinal;
+    bSize,ConnCount,j:integer;
+    RasConnStatus:TRasConnStatus;
+    RasConn:TRasConn;
+    ArrRasConn,RasOld:LPRasConn;
+begin
+  Memo1.Clear;
+  try
+  GetMem(PChar(ArrRasConn),bSize);
+  ArrRasConn^.dwSize:=SizeOf(TRasConn);
+  j:=bSize;
+  if RasEnumConnections(ArrRasConn,j,ConnCount)=0 then RasHangUp(ArrRasConn.hrasconn);
+  FreeMem(PChar(RasOld),bSize);
+  except
+  end;
+
+
+  
+
+
+end;
+
+procedure TForm1.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  RasHangUp(hRas);
+end;
+
+end.

@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{c7ef491d-51a2-4b75-a352-335c34e2c0fe}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+    <DCC_DependencyCheckOutputName>..\exe\NM.exe</DCC_DependencyCheckOutputName>
+    <MainSource>NM.dpr</MainSource>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_DebugInformation>False</DCC_DebugInformation>
+    <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+    <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    <DCC_Define>RELEASE</DCC_Define>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_Define>DEBUG</DCC_Define>
+    <DCC_ExeOutput>../exe</DCC_ExeOutput>
+    <DCC_DcuOutput>../dcu</DCC_DcuOutput>
+    <DCC_ObjOutput>../dcu</DCC_ObjOutput>
+    <DCC_HppOutput>../dcu</DCC_HppOutput>
+    <DCC_UnitSearchPath>../dcu</DCC_UnitSearchPath>
+    <DCC_ResourcePath>../dcu</DCC_ResourcePath>
+    <DCC_ObjPath>../dcu</DCC_ObjPath>
+    <DCC_IncludePath>../dcu</DCC_IncludePath>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Delphi.Personality</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+<BorlandProject><Delphi.Personality><Parameters><Parameters Name="UseLauncher">False</Parameters><Parameters Name="LoadAllSymbols">True</Parameters><Parameters Name="LoadUnspecifiedSymbols">False</Parameters></Parameters><VersionInfo><VersionInfo Name="IncludeVerInfo">True</VersionInfo><VersionInfo Name="AutoIncBuild">True</VersionInfo><VersionInfo Name="MajorVer">0</VersionInfo><VersionInfo Name="MinorVer">1</VersionInfo><VersionInfo Name="Release">0</VersionInfo><VersionInfo Name="Build">3</VersionInfo><VersionInfo Name="Debug">False</VersionInfo><VersionInfo Name="PreRelease">False</VersionInfo><VersionInfo Name="Special">False</VersionInfo><VersionInfo Name="Private">False</VersionInfo><VersionInfo Name="DLL">False</VersionInfo><VersionInfo Name="Locale">1058</VersionInfo><VersionInfo Name="CodePage">1251</VersionInfo></VersionInfo><VersionInfoKeys><VersionInfoKeys Name="CompanyName"></VersionInfoKeys><VersionInfoKeys Name="FileDescription"></VersionInfoKeys><VersionInfoKeys Name="FileVersion">0.1.0.3</VersionInfoKeys><VersionInfoKeys Name="InternalName"></VersionInfoKeys><VersionInfoKeys Name="LegalCopyright"></VersionInfoKeys><VersionInfoKeys Name="LegalTrademarks"></VersionInfoKeys><VersionInfoKeys Name="OriginalFilename"></VersionInfoKeys><VersionInfoKeys Name="ProductName"></VersionInfoKeys><VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys><VersionInfoKeys Name="Comments"></VersionInfoKeys></VersionInfoKeys><Source><Source Name="MainSource">NM.dpr</Source></Source></Delphi.Personality></BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Import Project="$(MSBuildBinPath)\Borland.Delphi.Targets" />
+  <ItemGroup>
+    <DelphiCompile Include="NM.dpr">
+      <MainSource>MainSource</MainSource>
+    </DelphiCompile>
+    <DCCReference Include="..\Lables\uLablesForm.pas">
+      <Form>ETForm</Form>
+    </DCCReference>
+    <DCCReference Include="..\Sourse\uAProvedenia.pas">
+      <Form>AutoForm</Form>
+    </DCCReference>
+    <DCCReference Include="..\Sourse\uArgox203.pas" />
+    <DCCReference Include="..\Sourse\uAZamovlenia.pas">
+      <Form>AZamovleniaForm</Form>
+    </DCCReference>
+    <DCCReference Include="..\Sourse\uCommPort.pas" />
+    <DCCReference Include="..\Sourse\uData.pas" />
+    <DCCReference Include="..\Sourse\uDataST.pas" />
+    <DCCReference Include="..\Sourse\uDC.pas" />
+    <DCCReference Include="..\Sourse\uFOper.pas">
+      <Form>FOperForm</Form>
+    </DCCReference>
+    <DCCReference Include="..\Sourse\uForumForm.pas">
+      <Form>ForumForm</Form>
+    </DCCReference>
+    <DCCReference Include="..\Sourse\uFTP.pas">
+      <Form>FTPForm</Form>
+    </DCCReference>
+    <DCCReference Include="..\Sourse\uFVidomosti.pas">
+      <Form>FVidomostiForm</Form>
+    </DCCReference>
+    <DCCReference Include="..\Sourse\uInputClients.pas">
+      <Form>InputDlg</Form>
+    </DCCReference>
+    <DCCReference Include="..\Sourse\uLibMySQL.pas" />
+    <DCCReference Include="..\Sourse\uLog.pas">
+      <Form>LogForm</Form>
+    </DCCReference>
+    <DCCReference Include="..\Sourse\uLowerCaseForm.pas">
+      <Form>LowerCaseForm</Form>
+    </DCCReference>
+    <DCCReference Include="..\Sourse\uMainForm.pas">
+      <Form>MainMForm</Form>
+    </DCCReference>
+    <DCCReference Include="..\Sourse\uMyGrid.pas" />
+    <DCCReference Include="..\Sourse\uNewZnacenia.pas">
+      <Form>NewZnaceniaForm</Form>
+    </DCCReference>
+    <DCCReference Include="..\Sourse\uNProdaja.pas">
+      <Form>FNP</Form>
+    </DCCReference>
+    <DCCReference Include="..\Sourse\uOperVidomosti.pas">
+      <Form>OVForm</Form>
+    </DCCReference>
+    <DCCReference Include="..\Sourse\uOptCalculate.pas">
+      <Form>OptCalculateForm</Form>
+    </DCCReference>
+    <DCCReference Include="..\Sourse\uOrderForm.pas">
+      <Form>OrderForm</Form>
+    </DCCReference>
+    <DCCReference Include="..\Sourse\uOrdersForm.pas">
+      <Form>OrdersForm</Form>
+    </DCCReference>
+    <DCCReference Include="..\Sourse\uPereocinka.pas">
+      <Form>PereocinkaForm</Form>
+    </DCCReference>
+    <DCCReference Include="..\Sourse\uPermiscenia.pas">
+      <Form>FPM</Form>
+    </DCCReference>
+    <DCCReference Include="..\Sourse\uPrintForm.pas">
+      <Form>PrintForm</Form>
+    </DCCReference>
+    <DCCReference Include="..\Sourse\uProdaja.pas">
+      <Form>ProdajaForm</Form>
+    </DCCReference>
+    <DCCReference Include="..\Sourse\uSearchForm.pas">
+      <Form>SearchForm</Form>
+    </DCCReference>
+    <DCCReference Include="..\Sourse\uSetingsForm.pas">
+      <Form>SetingsForm</Form>
+    </DCCReference>
+    <DCCReference Include="..\Sourse\uSMenegerForm.pas">
+      <Form>SMForm</Form>
+    </DCCReference>
+    <DCCReference Include="..\Sourse\uSQL_Func.pas" />
+    <DCCReference Include="..\Sourse\uStruct.pas">
+      <Form>StructForm</Form>
+    </DCCReference>
+    <DCCReference Include="..\Sourse\uTTP245.pas" />
+    <DCCReference Include="..\Sourse\uVidacha.pas">
+      <Form>VidachaForm</Form>
+    </DCCReference>
+    <DCCReference Include="..\Sourse\uVidomosti.pas">
+      <Form>VidomostiForm</Form>
+    </DCCReference>
+  </ItemGroup>
+</Project>

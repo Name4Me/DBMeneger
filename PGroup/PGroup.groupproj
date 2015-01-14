@@ -1,0 +1,85 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{8bfcb872-c12d-4a13-b080-4e67b3f5d9b1}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup />
+  <ItemGroup />
+  <ProjectExtensions>
+    <Borland.Personality>Default.Personality</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+<BorlandProject xmlns=""><Default.Personality></Default.Personality></BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Target Name="Sinhronaze">
+    <MSBuild Projects="..\Sinhronaze\Sinhronaze.dproj" Targets="" />
+  </Target>
+  <Target Name="Sinhronaze:Clean">
+    <MSBuild Projects="..\Sinhronaze\Sinhronaze.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="Sinhronaze:Make">
+    <MSBuild Projects="..\Sinhronaze\Sinhronaze.dproj" Targets="Make" />
+  </Target>
+  <Target Name="Restore">
+    <MSBuild Projects="..\Restore\Restore.dproj" Targets="" />
+  </Target>
+  <Target Name="Restore:Clean">
+    <MSBuild Projects="..\Restore\Restore.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="Restore:Make">
+    <MSBuild Projects="..\Restore\Restore.dproj" Targets="Make" />
+  </Target>
+  <Target Name="Lables">
+    <MSBuild Projects="..\Lables\Lables.dproj" Targets="" />
+  </Target>
+  <Target Name="Lables:Clean">
+    <MSBuild Projects="..\Lables\Lables.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="Lables:Make">
+    <MSBuild Projects="..\Lables\Lables.dproj" Targets="Make" />
+  </Target>
+  <Target Name="Location">
+    <MSBuild Projects="..\Location.dproj" Targets="" />
+  </Target>
+  <Target Name="Location:Clean">
+    <MSBuild Projects="..\Location.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="Location:Make">
+    <MSBuild Projects="..\Location.dproj" Targets="Make" />
+  </Target>
+  <Target Name="NM">
+    <MSBuild Projects="..\NM\NM.dproj" Targets="" />
+  </Target>
+  <Target Name="NM:Clean">
+    <MSBuild Projects="..\NM\NM.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="NM:Make">
+    <MSBuild Projects="..\NM\NM.dproj" Targets="Make" />
+  </Target>
+  <Target Name="MyPackage">
+    <MSBuild Projects="..\MyGrid\MyPackage.dproj" Targets="" />
+  </Target>
+  <Target Name="MyPackage:Clean">
+    <MSBuild Projects="..\MyGrid\MyPackage.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="MyPackage:Make">
+    <MSBuild Projects="..\MyGrid\MyPackage.dproj" Targets="Make" />
+  </Target>
+  <Target Name="UPLoader">
+    <MSBuild Projects="..\UPLoader\UPLoader.dproj" Targets="" />
+  </Target>
+  <Target Name="UPLoader:Clean">
+    <MSBuild Projects="..\UPLoader\UPLoader.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="UPLoader:Make">
+    <MSBuild Projects="..\UPLoader\UPLoader.dproj" Targets="Make" />
+  </Target>
+  <Target Name="Build">
+    <CallTarget Targets="Sinhronaze;Restore;Lables;Location;NM;MyPackage;UPLoader" />
+  </Target>
+  <Target Name="Clean">
+    <CallTarget Targets="Sinhronaze:Clean;Restore:Clean;Lables:Clean;Location:Clean;NM:Clean;MyPackage:Clean;UPLoader:Clean" />
+  </Target>
+  <Target Name="Make">
+    <CallTarget Targets="Sinhronaze:Make;Restore:Make;Lables:Make;Location:Make;NM:Make;MyPackage:Make;UPLoader:Make" />
+  </Target>
+</Project>

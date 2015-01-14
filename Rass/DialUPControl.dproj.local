@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2009.09.11 13:46:14.107.pas,D:\MyProjects\DBMeneger\Rass\main.pas=D:\MyProjects\DBMeneger\Rass\uDCService.pas</Transaction>
+    <Transaction>2009.09.11 13:46:14.107.dfm,D:\MyProjects\DBMeneger\Rass\main.dfm=D:\MyProjects\DBMeneger\Rass\uDCService.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

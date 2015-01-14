@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2009.09.09 18:54:38.171.pas,C:\Documents and Settings\Dreamer\Мои документы\RAD Studio\Projects\Unit1.pas=D:\MyProjects\Rass\main.pas</Transaction>
+    <Transaction>2009.09.09 18:54:38.171.dfm,C:\Documents and Settings\Dreamer\Мои документы\RAD Studio\Projects\Unit1.dfm=D:\MyProjects\Rass\main.dfm</Transaction>
+    <Transaction>2009.09.09 18:55:56.640.dproj,C:\Documents and Settings\Dreamer\Мои документы\RAD Studio\Projects\Project1.dproj=D:\MyProjects\Rass\MyServer.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

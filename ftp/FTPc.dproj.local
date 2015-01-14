@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2009.09.11 07:37:10.140.dproj,D:\MyProjects\DBMeneger\ftp\FTPDemo.dproj=D:\MyProjects\DBMeneger\ftp\FTPc.dproj</Transaction>
+    <Transaction>2009.09.11 07:37:19.453.pas,D:\MyProjects\DBMeneger\ftp\mainf.pas=D:\MyProjects\DBMeneger\ftp\uFTP.pas</Transaction>
+    <Transaction>2009.09.11 07:37:19.453.dfm,D:\MyProjects\DBMeneger\ftp\mainf.dfm=D:\MyProjects\DBMeneger\ftp\uFTP.dfm</Transaction>
+    <Transaction>2009.09.11 09:23:54.859.pas,D:\MyProjects\DBMeneger\ftp\uFTP.pas=D:\MyProjects\DBMeneger\Sourse\uFTP.pas</Transaction>
+    <Transaction>2009.09.11 09:23:54.859.dfm,D:\MyProjects\DBMeneger\ftp\uFTP.dfm=D:\MyProjects\DBMeneger\Sourse\uFTP.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

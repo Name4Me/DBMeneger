@@ -1,0 +1,136 @@
+object SMForm: TSMForm
+  Left = 0
+  Top = 0
+  Caption = #1050#1086#1088#1080#1089#1090#1091#1074#1072#1095#1110' '#1089#1072#1081#1090#1091
+  ClientHeight = 223
+  ClientWidth = 426
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Visible = True
+  OnClose = FormClose
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object TabSet: TTabSet
+    Left = 0
+    Top = 0
+    Width = 426
+    Height = 25
+    Align = alTop
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Times New Roman'
+    Font.Style = []
+    SoftTop = True
+    Style = tsSoftTabs
+    TabHeight = 80
+    TabPosition = tpTop
+    OnClick = TabSetOnClick
+  end
+  object Button1: TButton
+    Left = 343
+    Top = 62
+    Width = 75
+    Height = 25
+    Caption = #1047#1084#1110#1085#1080#1090#1080
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+    OnClick = Button1Click
+  end
+  object ButtonGroup: TButtonGroup
+    Left = 0
+    Top = 25
+    Height = 198
+    Align = alLeft
+    BevelInner = bvLowered
+    BevelKind = bkFlat
+    BorderStyle = bsNone
+    ButtonOptions = [gboFullSize, gboGroupStyle, gboShowCaptions]
+    Items = <>
+    TabOrder = 2
+    OnButtonClicked = ButtonGroupButtonClicked
+  end
+  object LabeledEdit1: TLabeledEdit
+    Left = 106
+    Top = 45
+    Width = 223
+    Height = 27
+    EditLabel.Width = 54
+    EditLabel.Height = 13
+    EditLabel.Caption = #1047#1074#1077#1088#1085#1077#1085#1085#1103
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 3
+  end
+  object Button2: TButton
+    Left = 343
+    Top = 93
+    Width = 75
+    Height = 25
+    Caption = #1042#1080#1076#1072#1083#1080#1090#1080
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 4
+    OnClick = Button2Click
+  end
+  object LabeledEdit2: TLabeledEdit
+    Left = 106
+    Top = 95
+    Width = 223
+    Height = 27
+    EditLabel.Width = 26
+    EditLabel.Height = 13
+    EditLabel.Caption = #1051#1086#1075#1110#1085
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 5
+  end
+  object LabeledEdit3: TLabeledEdit
+    Left = 106
+    Top = 145
+    Width = 223
+    Height = 27
+    EditLabel.Width = 28
+    EditLabel.Height = 13
+    EditLabel.Caption = 'e-mail'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 6
+  end
+  object Button3: TButton
+    Left = 343
+    Top = 31
+    Width = 75
+    Height = 25
+    Caption = #1040#1082#1090#1080#1074#1091#1074#1072#1090#1080
+    TabOrder = 7
+    OnClick = Button3Click
+  end
+end

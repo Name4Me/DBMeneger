@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2009.09.05 12:14:39.109.pas,D:\MyProjects\NMen\Unit23.pas=D:\MyProjects\DBMeneger\Sourse\uStruct.pas</Transaction>
+    <Transaction>2009.09.05 12:14:39.109.dfm,D:\MyProjects\NMen\Unit23.dfm=D:\MyProjects\DBMeneger\Sourse\uStruct.dfm</Transaction>
+    <Transaction>2009.09.06 11:47:46.421.pas,D:\MyProjects\NMen\Unit7.pas=D:\MyProjects\DBMeneger\Sourse\uPereocinka.pas</Transaction>
+    <Transaction>2009.09.06 11:47:46.421.dfm,D:\MyProjects\NMen\Unit7.dfm=D:\MyProjects\DBMeneger\Sourse\uPereocinka.dfm</Transaction>
+    <Transaction>2009.09.06 14:01:45.390.pas,D:\MyProjects\NMen\Unit10.pas=D:\MyProjects\DBMeneger\Sourse\uNewZnacenia.pas</Transaction>
+    <Transaction>2009.09.06 14:01:45.390.dfm,D:\MyProjects\NMen\Unit10.dfm=D:\MyProjects\DBMeneger\Sourse\uNewZnacenia.dfm</Transaction>
+    <Transaction>2009.09.11 09:12:32.062.pas,D:\MyProjects\DBMeneger\ftp\uFTP.pas=</Transaction>
+    <Transaction>2009.09.11 09:12:32.062.dfm,D:\MyProjects\DBMeneger\ftp\uFTP.dfm=</Transaction>
+    <Transaction>2009.09.11 09:23:54.890.pas,D:\MyProjects\DBMeneger\ftp\uFTP.pas=D:\MyProjects\DBMeneger\Sourse\uFTP.pas</Transaction>
+    <Transaction>2009.09.11 09:23:54.890.dfm,D:\MyProjects\DBMeneger\ftp\uFTP.dfm=D:\MyProjects\DBMeneger\Sourse\uFTP.dfm</Transaction>
+    <Transaction>2009.09.12 11:59:51.500.pas,D:\MyProjects\DBMeneger\NM\Unit1.pas=D:\MyProjects\DBMeneger\NM\uTTP245.pas</Transaction>
+    <Transaction>2009.09.12 12:00:34.015.pas,D:\MyProjects\DBMeneger\NM\uTTP245.pas=D:\MyProjects\DBMeneger\Sourse\uTTP245.pas</Transaction>
+    <Transaction>2009.09.13 18:37:36.015.pas,D:\MyProjects\DBMeneger\NM\Unit1.pas=D:\MyProjects\DBMeneger\Sourse\uLog.pas</Transaction>
+    <Transaction>2009.09.13 18:37:36.015.dfm,D:\MyProjects\DBMeneger\NM\Unit1.dfm=D:\MyProjects\DBMeneger\Sourse\uLog.dfm</Transaction>
+    <Transaction>2009.09.19 11:55:25.156.pas,D:\MyProjects\DBMeneger\NM\Unit1.pas=D:\MyProjects\DBMeneger\Sourse\uMyGrid.pas</Transaction>
+    <Transaction>2009.09.23 18:49:40.590.pas,D:\MyProjects\DBMeneger\NM\Unit1.pas=D:\MyProjects\DBMeneger\Sourse\uDC.pas</Transaction>
+  </Transactions>
+</BorlandProject>

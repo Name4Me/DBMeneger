@@ -1,0 +1,40 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{7b33f027-dbab-43f7-9924-ee4312d015e4}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup />
+  <ItemGroup />
+  <ProjectExtensions>
+    <Borland.Personality>Default.Personality</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+  <BorlandProject xmlns=""> <Default.Personality> </Default.Personality> </BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Target Name="Project1">
+    <MSBuild Projects="Project1.dproj" Targets="" />
+  </Target>
+  <Target Name="Project1:Clean">
+    <MSBuild Projects="Project1.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="Project1:Make">
+    <MSBuild Projects="Project1.dproj" Targets="Make" />
+  </Target>
+  <Target Name="MyPackage">
+    <MSBuild Projects="MyPackage.dproj" Targets="" />
+  </Target>
+  <Target Name="MyPackage:Clean">
+    <MSBuild Projects="MyPackage.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="MyPackage:Make">
+    <MSBuild Projects="MyPackage.dproj" Targets="Make" />
+  </Target>
+  <Target Name="Build">
+    <CallTarget Targets="Project1;MyPackage" />
+  </Target>
+  <Target Name="Clean">
+    <CallTarget Targets="Project1:Clean;MyPackage:Clean" />
+  </Target>
+  <Target Name="Make">
+    <CallTarget Targets="Project1:Make;MyPackage:Make" />
+  </Target>
+</Project>

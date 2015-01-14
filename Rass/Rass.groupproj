@@ -1,0 +1,58 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{ad48287c-efa4-4314-8ab2-355585132e90}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup />
+  <ItemGroup />
+  <ProjectExtensions>
+    <Borland.Personality>Default.Personality</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+<BorlandProject xmlns=""><Default.Personality></Default.Personality></BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Target Name="DialUPControl">
+    <MSBuild Projects="DialUPControl.dproj" Targets="" />
+  </Target>
+  <Target Name="DialUPControl:Clean">
+    <MSBuild Projects="DialUPControl.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="DialUPControl:Make">
+    <MSBuild Projects="DialUPControl.dproj" Targets="Make" />
+  </Target>
+  <Target Name="Project9">
+    <MSBuild Projects="Project9.dproj" Targets="" />
+  </Target>
+  <Target Name="Project9:Clean">
+    <MSBuild Projects="Project9.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="Project9:Make">
+    <MSBuild Projects="Project9.dproj" Targets="Make" />
+  </Target>
+  <Target Name="Project1">
+    <MSBuild Projects="Project1.dproj" Targets="" />
+  </Target>
+  <Target Name="Project1:Clean">
+    <MSBuild Projects="Project1.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="Project1:Make">
+    <MSBuild Projects="Project1.dproj" Targets="Make" />
+  </Target>
+  <Target Name="FTPDemo">
+    <MSBuild Projects="..\ftp\FTP_Client_Server\Client\FTPDemo.dproj" Targets="" />
+  </Target>
+  <Target Name="FTPDemo:Clean">
+    <MSBuild Projects="..\ftp\FTP_Client_Server\Client\FTPDemo.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="FTPDemo:Make">
+    <MSBuild Projects="..\ftp\FTP_Client_Server\Client\FTPDemo.dproj" Targets="Make" />
+  </Target>
+  <Target Name="Build">
+    <CallTarget Targets="DialUPControl;Project9;Project1;FTPDemo" />
+  </Target>
+  <Target Name="Clean">
+    <CallTarget Targets="DialUPControl:Clean;Project9:Clean;Project1:Clean;FTPDemo:Clean" />
+  </Target>
+  <Target Name="Make">
+    <CallTarget Targets="DialUPControl:Make;Project9:Make;Project1:Make;FTPDemo:Make" />
+  </Target>
+</Project>

@@ -1,0 +1,3 @@
+load data local infile 'c:/temp/1004_1007.sav' IGNORE into Table toper Fields Terminated by ',' enclosed by '"' lines Terminated by '\n'
+select * from users
+load data local infile 'c:/temp/test.sav' IGNORE into Table sklad_copy Fields Terminated by ',' enclosed by '"' lines Terminated by '\n'

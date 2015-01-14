@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{f6f0e4a6-5e66-4842-9cb6-4350b92c2563}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+    <DCC_DependencyCheckOutputName>..\exe\Restore.exe</DCC_DependencyCheckOutputName>
+    <MainSource>Restore.dpr</MainSource>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_DebugInformation>False</DCC_DebugInformation>
+    <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+    <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    <DCC_Define>RELEASE</DCC_Define>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_Define>DEBUG</DCC_Define>
+    <DCC_ExeOutput>../exe</DCC_ExeOutput>
+    <DCC_DcuOutput>../dcu</DCC_DcuOutput>
+    <DCC_ObjOutput>../dcu</DCC_ObjOutput>
+    <DCC_HppOutput>../dcu</DCC_HppOutput>
+    <DCC_MapFile>3</DCC_MapFile>
+    <DCC_DebugInfoInExe>True</DCC_DebugInfoInExe>
+    <DCC_DebugVN>True</DCC_DebugVN>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Delphi.Personality</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+<BorlandProject><Delphi.Personality><Parameters><Parameters Name="UseLauncher">False</Parameters><Parameters Name="LoadAllSymbols">True</Parameters><Parameters Name="LoadUnspecifiedSymbols">False</Parameters></Parameters><VersionInfo><VersionInfo Name="IncludeVerInfo">True</VersionInfo><VersionInfo Name="AutoIncBuild">True</VersionInfo><VersionInfo Name="MajorVer">1</VersionInfo><VersionInfo Name="MinorVer">0</VersionInfo><VersionInfo Name="Release">0</VersionInfo><VersionInfo Name="Build">7</VersionInfo><VersionInfo Name="Debug">False</VersionInfo><VersionInfo Name="PreRelease">False</VersionInfo><VersionInfo Name="Special">False</VersionInfo><VersionInfo Name="Private">True</VersionInfo><VersionInfo Name="DLL">False</VersionInfo><VersionInfo Name="Locale">1058</VersionInfo><VersionInfo Name="CodePage">1251</VersionInfo></VersionInfo><VersionInfoKeys><VersionInfoKeys Name="CompanyName"></VersionInfoKeys><VersionInfoKeys Name="FileDescription"></VersionInfoKeys><VersionInfoKeys Name="FileVersion">1.0.0.7</VersionInfoKeys><VersionInfoKeys Name="InternalName"></VersionInfoKeys><VersionInfoKeys Name="LegalCopyright"></VersionInfoKeys><VersionInfoKeys Name="LegalTrademarks"></VersionInfoKeys><VersionInfoKeys Name="OriginalFilename"></VersionInfoKeys><VersionInfoKeys Name="ProductName"></VersionInfoKeys><VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys><VersionInfoKeys Name="Comments"></VersionInfoKeys>  <VersionInfoKeys Name="PrivateBuild"></VersionInfoKeys>
+    </VersionInfoKeys><Source><Source Name="MainSource">Restore.dpr</Source></Source></Delphi.Personality><ModelSupport>True</ModelSupport></BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Import Project="$(MSBuildBinPath)\Borland.Delphi.Targets" />
+  <ItemGroup>
+    <DelphiCompile Include="Restore.dpr">
+      <MainSource>MainSource</MainSource>
+    </DelphiCompile>
+    <DCCReference Include="..\Sourse\FastMM4.pas" />
+    <DCCReference Include="..\Sourse\FastMM4Messages.pas" />
+    <DCCReference Include="..\Sourse\uData.pas" />
+    <DCCReference Include="..\Sourse\uFileFunction.pas" />
+    <DCCReference Include="..\Sourse\uLibMySQL.pas" />
+    <DCCReference Include="..\Sourse\uRestore.pas">
+      <Form>RestoreForm</Form>
+    </DCCReference>
+    <DCCReference Include="..\Sourse\uSQL_Func.pas" />
+    <None Include="..\ModelSupport_Restore\default.txaPackage" />
+    <None Include="..\ModelSupport_Restore\default.txvpck" />
+    <None Include="..\ModelSupport_Restore\uData\default.txaPackage" />
+    <None Include="..\ModelSupport_Restore\uFileFunction\default.txaPackage" />
+    <None Include="..\ModelSupport_Restore\uLibMySQL\default.txaPackage" />
+    <None Include="..\ModelSupport_Restore\uRestore\default.txaPackage" />
+    <None Include="..\ModelSupport_Restore\uRestore\default.txvpck" />
+    <None Include="..\ModelSupport_Restore\uSetConectionForm\default.txaPackage" />
+    <None Include="..\ModelSupport_Restore\uSQL_Func\default.txaPackage" />
+    <None Include="..\ModelSupport_Restore\uSQL_Func\default.txvpck" />
+    <None Include="ModelSupport_Restore\default.txaPackage" />
+  </ItemGroup>
+</Project>
